@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HW5</title>
+	<link rel="stylesheet" type="text/css" href="113306014_HW7.css">
+</head>
+<body>
+	<div class="main-container">
+		<div class="left-panel">
+			<div class="photo-panel">
+			</div>
+			<div class="text-content">	
+				<div class="name">
+					<h1>Tingo <button onclick="changeName()">edit</button></h1>
+				</div>
+				<div class="aboutme">
+					<h2>About me</h2>
+					<div>
+						~~~~~~~~~~~~~~~~~~~<br>
+						~~~~~~~~~~~~~~~~~~~<br>
+						~~~~~~~~~~~~~~~~~~~<br>
+						~~~~~~~~~~~~~~~~~~~<br>
+					</div>
+				</div>
+				<div class="contact">
+					<h2>Contact</h2>
+					<h3>113306014@nccu.edu.tw</h3>
+				</div>
+				<div id="nccu-logo">
+					<figure>
+						<img src="nccu-logo.png">
+						<figcaption>抱歉，沒去背</figcaption>
+					</figure>
+				</div>
+			</div>
+		</div>
+		<div class="right-panel">
+			<div class="education">
+				<h2><b>Education</b></h2>
+				<h4><span class="year">2024 -</span>National Chengchi University, Department of MIS</h4><br>
+				<h4><span class="year">2024 -</span>High School Graduation</h4><br>
+				<h4><span class="year">2021 -</span>Middle School Graduation</h4>
+			</div>
+			<div class="homework">
+				<h2><b>Homework List</b></h2>
+				<h4>HW1-<a href="https://github.com/TingoHsu/HW1.git">https://github.com/TingoHsu/HW1.git</a></h4><br>
+				<h4>HW2-<a href="https://github.com/TingoHsu/HW2.git">https://github.com/TingoHsu/HW2.git</a></h4><br>
+				<h4>HW3-<a href="https://github.com/TingoHsu/HW3.git">https://github.com/TingoHsu/HW3.git</a></h4>
+			</div>
+			<div class="music">
+				<h2><b>Favorite Music</b></h2>
+				<div class="musicrow">
+					<div class="musiccol">
+						<figure>
+							<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="Youtube-logo.png" alt="Cannot load youtube logo"></a><figcaption>Never gonna give you up</figcaption>
+						</figure>
+					</div>
+					<div class="musiccol">
+						<figure>
+							<a href="https://www.youtube.com/watch?v=p8ET-m6y6VU"><img src="Youtube-logo.png" alt="Cannot load youtube logo"></a><figcaption>Wish upon Twin Stars</figcaption>
+						</figure>
+					</div>
+					<div class="musiccol">
+						<figure>
+							<a href="https://www.youtube.com/watch?v=D6DVTLvOupE"><img src="Youtube-logo.png" alt="Cannot load youtube logo"></a><figcaption>強風オールバック (feat.歌愛ユキ)</figcaption>
+						</figure>
+					</div>
+				</div>
+				<div class="addMusic">
+					<button onclick="addMusic()">add</button>
+				</div>
+				<div class="note">
+					Note: Sorry it looks bad
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	window.addEventListener("load", () => {
+		isEditing = false;
+	})
+	function changeName() {
+ 		if (isEditing == true) {
+ 			var input = document.getElementById("inputName").value;
+ 			document.getElementsByClassName("name")[0].innerHTML = `<h1> ${input} <button onclick="changeName()">edit</button></h1>`;
+			isEditing = !isEditing;
+		} else {
+			document.getElementsByClassName("name")[0].innerHTML = '<input type="text" name="name" id="inputName">' + 
+																	'<button onclick="changeName()">save</button>';
+			isEditing = !isEditing;
+		}
+	}
+	function addMusic() {
+		document.getElementsByClassName("addMusic")[0].innerHTML += '<div class="addMusicForm"> <input type="text" id="link" name="link" placeholder="Music Link"><br> <input type="text" id="musicName" name="musicName" placeholder="Music Name"><br> <button onclick="addMusicDone()">Submit</button> </div>';
+	}
+	function addMusicDone() {
+		var inputLink = document.getElementById("link").value;
+		var inputMusicName = document.getElementById("musicName").value;
+		if (inputLink == "") {
+			alert("Please enter music link");
+		} else if (inputMusicName == "") {
+			alert("Please enter music name");
+		} else {
+			document.getElementsByClassName("musicrow")[0].innerHTML += `<div class="musiccol"> <figure><a href="${inputLink}"><img src="Youtube-logo.png" alt="Cannot load youtube logo"></a><figcaption>${inputMusicName}</figcaption> </figure> </div>`;
+			document.getElementsByClassName("addMusic")[0].innerHTML = '<button onclick="addMusic()">add</button>';
+		}
+	}
+	</script>
+</body>
+</html>

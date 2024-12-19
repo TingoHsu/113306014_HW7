@@ -1,0 +1,95 @@
+body {background: white;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			padding: 20px;
+		}
+.main-container {
+	background: #c3c3c3;
+	display: flex;
+	flex-wrap: wrap;
+	width: 870px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.left-panel {
+	background: #626262;
+	width: 330px;
+	height: 1150px;
+}
+.photo-panel {
+	background-image: url('dream_irpsqvczpto.jpg');
+  	width: 100%;
+  	height: 50%;
+  	background-position: center;
+  	background-repeat: no-repeat;
+}
+.text-content {
+  	width: 100%;
+  	height: 50%;
+}
+.name {
+	padding-left: 20px;
+}
+.aboutme {
+	padding-left: 20px;
+}
+.contact {
+	padding-left: 20px;
+}
+#nccu-logo {
+	padding-top: 50px;
+}
+figcaption {
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 0.75em;
+}
+		
+.right-panel {
+	background: #f6f6f6;
+	width: 540px;
+	height: 1150px;
+}
+.right-panel h2 {
+	border-bottom: 2px solid black;
+}
+.education {
+	padding: 20px;
+	height: 30%;
+}
+.year {
+	text-indent: 700px;
+	padding-right: 10px;
+		}
+.homework {
+	padding: 20px;
+	height: 30%;
+}
+a:hover {
+	color: gray;
+}
+.music {
+	padding: 20px;
+	height: 30%;
+}
+.musicrow {
+	display: flex;
+}
+.musiccol {
+	flex: 25%;
+	align-content: center;
+}
+.note {
+	color: rgba(0, 0, 0, 0.3);
+}
+.addMusicForm {
+	width: 200px;
+	border: 2px solid black;
+	background: coral;
+	text-align: center;
+}
+#link {
+	width: 150px;
+}
+#musicName {
+	width: 150px;
+}
